@@ -27,14 +27,14 @@ materiais, "sentir que está quase", ou conversas sem pedido concreto.
 
 Toda a entrada do catálogo tem exactamente um tipo. O tipo determina as regras de validação aplicáveis.
 
-| Código | Tipo | Exemplos |
-|---|---|---|
-| **T1** | Serviço local presencial | Explicações, reparações, limpezas, apoio a eventos, jardinagem |
-| **T2** | Serviço profissional remoto | Design, copywriting, desenvolvimento, consultoria, tradução |
-| **T3** | Produto digital | Ebook, template, curso, preset, ferramenta |
-| **T4** | Produto físico | Artesanato, restauro, revenda, produção artesanal |
-| **T5** | Conteúdo com audiência | Afiliação, patrocínio, conteúdo por encomenda |
-| **T6** | Trabalho em plataforma | Marketplaces e plataformas de trabalho por tarefa ou projecto |
+| Código | Tipo                        | Exemplos                                                       |
+| ------ | --------------------------- | -------------------------------------------------------------- |
+| **T1** | Serviço local presencial    | Explicações, reparações, limpezas, apoio a eventos, jardinagem |
+| **T2** | Serviço profissional remoto | Design, copywriting, desenvolvimento, consultoria, tradução    |
+| **T3** | Produto digital             | Ebook, template, curso, preset, ferramenta                     |
+| **T4** | Produto físico              | Artesanato, restauro, revenda, produção artesanal              |
+| **T5** | Conteúdo com audiência      | Afiliação, patrocínio, conteúdo por encomenda                  |
+| **T6** | Trabalho em plataforma      | Marketplaces e plataformas de trabalho por tarefa ou projecto  |
 
 ---
 
@@ -43,14 +43,14 @@ Toda a entrada do catálogo tem exactamente um tipo. O tipo determina as regras 
 **Definição geral:** a oferta tornou-se alcançável, sem intermediação do utilizador, por pelo menos
 uma pessoa que não o próprio.
 
-| Tipo | Evento observável | Evidência exigida | Não conta |
-|---|---|---|---|
-| **T1** | Anúncio publicado em canal com alcance real, ou oferta apresentada presencialmente a ≥3 potenciais clientes identificáveis | Ligação pública ou captura com data; ou lista datada dos contactos abordados | Cartazes por afixar; anúncio em rascunho |
-| **T2** | Perfil ou proposta enviada a ≥3 clientes potenciais reais, ou oferta publicada em canal profissional | Cópia das mensagens enviadas com data; ou ligação ao perfil publicado | Perfil criado sem candidaturas nem publicação |
-| **T3** | Produto listado e comprável, com preço e meio de pagamento activo | Ligação pública à página de compra | Página de espera; produto ainda em produção |
-| **T4** | Produto listado à venda com preço e stock, ou apresentado em ponto de venda real | Ligação ao anúncio ou fotografia datada do ponto de venda | Produto feito mas não listado |
-| **T5** | Conteúdo publicado com oferta explícita (ligação de afiliação, contacto comercial, kit de patrocínio enviado) | Ligação à publicação, ou envio do kit com data | Conteúdo sem oferta associada |
-| **T6** | Candidatura submetida a ≥3 tarefas/projectos, ou perfil activo e disponível para receber trabalho | Referência ou captura das candidaturas na plataforma | Registo na plataforma sem candidatura nem disponibilidade activa |
+| Tipo   | Evento observável                                                                                                          | Evidência exigida                                                            | Não conta                                                        |
+| ------ | -------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------- |
+| **T1** | Anúncio publicado em canal com alcance real, ou oferta apresentada presencialmente a ≥3 potenciais clientes identificáveis | Ligação pública ou captura com data; ou lista datada dos contactos abordados | Cartazes por afixar; anúncio em rascunho                         |
+| **T2** | Perfil ou proposta enviada a ≥3 clientes potenciais reais, ou oferta publicada em canal profissional                       | Cópia das mensagens enviadas com data; ou ligação ao perfil publicado        | Perfil criado sem candidaturas nem publicação                    |
+| **T3** | Produto listado e comprável, com preço e meio de pagamento activo                                                          | Ligação pública à página de compra                                           | Página de espera; produto ainda em produção                      |
+| **T4** | Produto listado à venda com preço e stock, ou apresentado em ponto de venda real                                           | Ligação ao anúncio ou fotografia datada do ponto de venda                    | Produto feito mas não listado                                    |
+| **T5** | Conteúdo publicado com oferta explícita (ligação de afiliação, contacto comercial, kit de patrocínio enviado)              | Ligação à publicação, ou envio do kit com data                               | Conteúdo sem oferta associada                                    |
+| **T6** | Candidatura submetida a ≥3 tarefas/projectos, ou perfil activo e disponível para receber trabalho                          | Referência ou captura das candidaturas na plataforma                         | Registo na plataforma sem candidatura nem disponibilidade activa |
 
 **Regra transversal de N1:** publicar num canal sem qualquer audiência (ex.: página sem tráfego,
 grupo inexistente) conta como N1 técnico mas fica assinalado como **exposição de baixo alcance** na
@@ -63,14 +63,14 @@ revisão semanal. O produto não bloqueia, mas nomeia o problema.
 **Definição geral:** um terceiro não relacionado praticou um acto voluntário que sinaliza intenção de
 comprar. O acto parte do mercado, não do utilizador.
 
-| Tipo | Evento observável | Evidência exigida |
-|---|---|---|
-| **T1** | Pedido de orçamento, pergunta sobre disponibilidade ou marcação de visita | Mensagem, chamada registada ou marcação, com data |
-| **T2** | Resposta a proposta com pedido de detalhe, convite a reunião, ou pedido de orçamento | Mensagem ou convite de reunião com data |
-| **T3** | Pedido de informação pré-compra, entrada em lista com intenção declarada, ou carrinho abandonado identificável | Mensagem ou registo da plataforma |
-| **T4** | Pedido de reserva, pergunta sobre disponibilidade, envio ou personalização | Mensagem ou registo do anúncio |
-| **T5** | Contacto de marca, pedido de parceria, ou clique com conversão parcial rastreável | Mensagem ou relatório do painel de afiliação |
-| **T6** | Convite, entrevista, pedido de orçamento ou proposta aceite mas ainda não paga | Registo da plataforma com data |
+| Tipo   | Evento observável                                                                                              | Evidência exigida                                 |
+| ------ | -------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- |
+| **T1** | Pedido de orçamento, pergunta sobre disponibilidade ou marcação de visita                                      | Mensagem, chamada registada ou marcação, com data |
+| **T2** | Resposta a proposta com pedido de detalhe, convite a reunião, ou pedido de orçamento                           | Mensagem ou convite de reunião com data           |
+| **T3** | Pedido de informação pré-compra, entrada em lista com intenção declarada, ou carrinho abandonado identificável | Mensagem ou registo da plataforma                 |
+| **T4** | Pedido de reserva, pergunta sobre disponibilidade, envio ou personalização                                     | Mensagem ou registo do anúncio                    |
+| **T5** | Contacto de marca, pedido de parceria, ou clique com conversão parcial rastreável                              | Mensagem ou relatório do painel de afiliação      |
+| **T6** | Convite, entrevista, pedido de orçamento ou proposta aceite mas ainda não paga                                 | Registo da plataforma com data                    |
 
 **Não conta como N2:** gostos, seguidores, visualizações, comentários de apoio, "avisa-me quando
 tiveres", ou interesse manifestado por familiares e amigos próximos.
@@ -82,14 +82,14 @@ tiveres", ou interesse manifestado por familiares e amigos próximos.
 **Definição:** valor recebido, ou confirmado como devido por trabalho concluído e aceite, de uma
 contraparte não relacionada.
 
-| Situação | Conta? |
-|---|---|
-| Pagamento recebido (transferência, MB Way, plataforma, numerário com registo) | **Sim** |
-| Trabalho entregue e aceite, com pagamento a 30 dias acordado por escrito | **Sim**, com data do acordo |
-| Adiantamento ou sinal de cliente real | **Sim** |
-| Troca sem dinheiro, permuta ou trabalho gratuito para portefólio | Não |
-| Venda a familiar directo ou amigo próximo | Não |
-| Reembolso posterior integral | Anula o evento; o utilizador regista a anulação |
+| Situação                                                                      | Conta?                                          |
+| ----------------------------------------------------------------------------- | ----------------------------------------------- |
+| Pagamento recebido (transferência, MB Way, plataforma, numerário com registo) | **Sim**                                         |
+| Trabalho entregue e aceite, com pagamento a 30 dias acordado por escrito      | **Sim**, com data do acordo                     |
+| Adiantamento ou sinal de cliente real                                         | **Sim**                                         |
+| Troca sem dinheiro, permuta ou trabalho gratuito para portefólio              | Não                                             |
+| Venda a familiar directo ou amigo próximo                                     | Não                                             |
+| Reembolso posterior integral                                                  | Anula o evento; o utilizador regista a anulação |
 
 **Evidência exigida:** comprovativo de pagamento, extracto da plataforma, ou recibo emitido.
 

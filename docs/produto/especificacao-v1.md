@@ -30,13 +30,13 @@ o topo torna o produto cego durante as primeiras semanas, exactamente quando a d
 
 **Escada de validação:**
 
-| Nível | Evento | O que prova | Conta para |
-|---|---|---|---|
-| **N0** | Preparação concluída (oferta pronta, materiais feitos) | Nada sobre o mercado | Progresso interno apenas |
-| **N1** | **Exposição real** — oferta publicada ou apresentada a mercado real | Que saiu do plano para o mundo | **TTV** (início da métrica-norte) |
-| **N2** | **Sinal de interesse** — resposta, pedido de orçamento, lead qualificado | Que a oferta é legível e desejável | TTV |
-| **N3** | **Primeira venda** | **Validação comercial — marco principal** | **TTV-venda** |
-| **N4** | Repetição — segunda venda ou cliente recorrente | Que N3 não foi sorte | Retenção |
+| Nível  | Evento                                                                   | O que prova                               | Conta para                        |
+| ------ | ------------------------------------------------------------------------ | ----------------------------------------- | --------------------------------- |
+| **N0** | Preparação concluída (oferta pronta, materiais feitos)                   | Nada sobre o mercado                      | Progresso interno apenas          |
+| **N1** | **Exposição real** — oferta publicada ou apresentada a mercado real      | Que saiu do plano para o mundo            | **TTV** (início da métrica-norte) |
+| **N2** | **Sinal de interesse** — resposta, pedido de orçamento, lead qualificado | Que a oferta é legível e desejável        | TTV                               |
+| **N3** | **Primeira venda**                                                       | **Validação comercial — marco principal** | **TTV-venda**                     |
+| **N4** | Repetição — segunda venda ou cliente recorrente                          | Que N3 não foi sorte                      | Retenção                          |
 
 - **TTV** = dias entre a criação do plano e o primeiro evento de nível ≥ N1. É a métrica-norte.
 - **TTV-venda** = dias até N3. É o **marco principal de validação comercial** e a métrica de sucesso
@@ -59,13 +59,13 @@ atinge N3 na semana 6, retenção às 8 semanas, distribuição de TTV por perfi
 define os limites do produto:** o diagnóstico cobre todo o espectro de perfis descrito em §3.1, e o
 catálogo é curado para servir esse espectro.
 
-| # | Persona | Contexto | Constrangimento dominante | Objetivo típico |
-|---|---|---|---|---|
-| **P1** (primária) | **Assalariado com tempo limitado** | 30–45 anos, emprego a tempo inteiro | 5–10h/semana, energia baixa ao fim do dia | +200–500 €/mês sem pôr o emprego em risco |
-| P2 | **Freelancer subutilizado** | Já vende serviços, receita irregular | Não sabe diversificar nem subir preço | Estabilizar e aumentar receita existente |
-| P3 | **Jovem / estudante** | Muito tempo, pouco capital, poucas credenciais | Sem portefólio nem investimento inicial | Primeiro rendimento próprio |
-| P4 | **Disponibilidade elevada** | Desempregado, reformado, entre projectos | Tempo abundante, urgência financeira | Rendimento significativo e rápido |
-| P5 | **Já vende, quer escalar com IA** | Experiência comercial consolidada | Capacidade individual esgotada | Alavancar competência existente |
+| #                 | Persona                            | Contexto                                       | Constrangimento dominante                 | Objetivo típico                           |
+| ----------------- | ---------------------------------- | ---------------------------------------------- | ----------------------------------------- | ----------------------------------------- |
+| **P1** (primária) | **Assalariado com tempo limitado** | 30–45 anos, emprego a tempo inteiro            | 5–10h/semana, energia baixa ao fim do dia | +200–500 €/mês sem pôr o emprego em risco |
+| P2                | **Freelancer subutilizado**        | Já vende serviços, receita irregular           | Não sabe diversificar nem subir preço     | Estabilizar e aumentar receita existente  |
+| P3                | **Jovem / estudante**              | Muito tempo, pouco capital, poucas credenciais | Sem portefólio nem investimento inicial   | Primeiro rendimento próprio               |
+| P4                | **Disponibilidade elevada**        | Desempregado, reformado, entre projectos       | Tempo abundante, urgência financeira      | Rendimento significativo e rápido         |
+| P5                | **Já vende, quer escalar com IA**  | Experiência comercial consolidada              | Capacidade individual esgotada            | Alavancar competência existente           |
 
 **Regra de produto:** nenhum perfil é rejeitado por sair do intervalo de P1. Um utilizador com 40h
 semanais disponíveis, orçamento de 2.000 € e experiência comercial recebe correspondências
@@ -95,17 +95,17 @@ Revisão semanal → continuar | ajustar | pivotar
 
 Nove dimensões, todas com peso na correspondência:
 
-| # | Dimensão | Recolhe |
-|---|---|---|
-| 1 | **Tempo** | Horas/semana, distribuição (úteis vs. fim de semana), previsibilidade |
-| 2 | **Experiência profissional** | Sector, anos, senioridade, natureza do trabalho |
-| 3 | **Competências** | Técnicas, criativas, manuais, relacionais — com nível auto-declarado |
-| 4 | **Orçamento** | Capital disponível para investir, incluindo 0 € |
-| 5 | **Preferências** | Online vs. presencial, com pessoas vs. sozinho, exposição pública, tipo de trabalho |
-| 6 | **Experiência comercial** | Já vendeu? Sabe fixar preço, negociar, fazer follow-up? Resistência a vender? |
-| 7 | **Experiência com IA** | Nenhuma / ocasional / profissional — e em que contexto |
-| 8 | **Objetivos** | Valor mensal, horizonte, motivação (complementar vs. substituir rendimento) |
-| 9 | **Limitações** | Exclusividade laboral, situação fiscal, saúde, mobilidade, obrigações familiares, aversão a risco |
+| #   | Dimensão                     | Recolhe                                                                                           |
+| --- | ---------------------------- | ------------------------------------------------------------------------------------------------- |
+| 1   | **Tempo**                    | Horas/semana, distribuição (úteis vs. fim de semana), previsibilidade                             |
+| 2   | **Experiência profissional** | Sector, anos, senioridade, natureza do trabalho                                                   |
+| 3   | **Competências**             | Técnicas, criativas, manuais, relacionais — com nível auto-declarado                              |
+| 4   | **Orçamento**                | Capital disponível para investir, incluindo 0 €                                                   |
+| 5   | **Preferências**             | Online vs. presencial, com pessoas vs. sozinho, exposição pública, tipo de trabalho               |
+| 6   | **Experiência comercial**    | Já vendeu? Sabe fixar preço, negociar, fazer follow-up? Resistência a vender?                     |
+| 7   | **Experiência com IA**       | Nenhuma / ocasional / profissional — e em que contexto                                            |
+| 8   | **Objetivos**                | Valor mensal, horizonte, motivação (complementar vs. substituir rendimento)                       |
+| 9   | **Limitações**               | Exclusividade laboral, situação fiscal, saúde, mobilidade, obrigações familiares, aversão a risco |
 
 **Dimensões 6 e 7 são determinantes e frequentemente ignoradas.** A experiência comercial prevê o
 esforço da fase de Exposição melhor do que qualquer competência técnica — quem nunca vendeu trava em
@@ -135,6 +135,7 @@ em Portugal, e um **playbook base** (fases e tarefas modelo, ancoradas na escada
 bloqueantes, orçamento ou tempo mínimo. Regras auditáveis e testáveis.
 
 **Passo 3 — Personalização e ranking por IA.** Sobre os elegíveis, a IA:
+
 - adapta a descrição ao perfil concreto (competências, sector, experiência comercial);
 - calcula os cinco eixos para **este** utilizador, não em abstracto;
 - ordena por adequação e justifica cada posição em linguagem clara;
@@ -142,13 +143,13 @@ bloqueantes, orçamento ou tempo mínimo. Regras auditáveis e testáveis.
 
 **Cinco eixos, sempre visíveis:**
 
-| Eixo | Significado |
-|---|---|
-| **Fit** | Alinhamento com o perfil das nove dimensões |
-| **Tempo até validação** | Dias estimados até N1 e até N3 |
-| **Potencial mensal** | Faixa realista observada, nunca o melhor caso |
-| **Esforço semanal** | Horas necessárias, confrontadas com as disponíveis |
-| **Risco / requisitos** | Investimento, obrigações legais e fiscais, exposição |
+| Eixo                    | Significado                                          |
+| ----------------------- | ---------------------------------------------------- |
+| **Fit**                 | Alinhamento com o perfil das nove dimensões          |
+| **Tempo até validação** | Dias estimados até N1 e até N3                       |
+| **Potencial mensal**    | Faixa realista observada, nunca o melhor caso        |
+| **Esforço semanal**     | Horas necessárias, confrontadas com as disponíveis   |
+| **Risco / requisitos**  | Investimento, obrigações legais e fiscais, exposição |
 
 São apresentadas **5 a 7 oportunidades**. Nenhuma é mostrada sem os cinco eixos preenchidos.
 
@@ -170,11 +171,11 @@ Restrição deliberada: a dispersão é a causa mais comum de falha em rendiment
 O playbook base da oportunidade é adaptado ao perfil e organizado em **três fases que correspondem à
 escada de validação** — não em fases arbitrárias:
 
-| Fase | Objetivo | Fecha em |
-|---|---|---|
-| **1. Preparação** | Oferta, preço, materiais mínimos | N0 |
-| **2. Exposição** | Pôr a oferta à frente de mercado real | **N1** |
-| **3. Conversão** | Responder, negociar, fechar | N2 → **N3** |
+| Fase              | Objetivo                              | Fecha em    |
+| ----------------- | ------------------------------------- | ----------- |
+| **1. Preparação** | Oferta, preço, materiais mínimos      | N0          |
+| **2. Exposição**  | Pôr a oferta à frente de mercado real | **N1**      |
+| **3. Conversão**  | Responder, negociar, fechar           | N2 → **N3** |
 
 Cada tarefa tem acção verificável, critério de conclusão explícito, esforço em minutos e dependências.
 
@@ -205,18 +206,18 @@ do motivo, que alimenta a curadoria do catálogo.
 
 ## 4. Ecrãs do v1 (mobile-first)
 
-| # | Ecrã | Função |
-|---|---|---|
-| 1 | Autenticação | Registo e entrada (email + OTP, OAuth Google) |
-| 2 | Diagnóstico | Núcleo + aprofundamento condicional, progresso persistido, completude visível |
-| 3 | Oportunidades | Lista ordenada, comparável, com origem (curada / candidato) visível |
-| 4 | Detalhe da oportunidade | Cinco eixos, requisitos legais e fiscais, justificação do ranking |
-| 5 | Dashboard | Nível de validação atual, dias em curso, próxima tarefa, rendimento vs. objetivo |
-| 6 | Plano | Três fases ancoradas na escada, progresso |
-| 7 | Detalhe da tarefa | Instruções, critério de conclusão, marcar como feita |
-| 8 | Registo de validação | Lançar evento N1–N4 com evidência; valor quando aplicável |
-| 9 | Revisão semanal | Diagnóstico da IA e decisão continuar/ajustar/pivotar |
-| 10 | Perfil e definições | Dados, exportar, eliminar conta (RGPD) |
+| #   | Ecrã                    | Função                                                                           |
+| --- | ----------------------- | -------------------------------------------------------------------------------- |
+| 1   | Autenticação            | Registo e entrada (email + OTP, OAuth Google)                                    |
+| 2   | Diagnóstico             | Núcleo + aprofundamento condicional, progresso persistido, completude visível    |
+| 3   | Oportunidades           | Lista ordenada, comparável, com origem (curada / candidato) visível              |
+| 4   | Detalhe da oportunidade | Cinco eixos, requisitos legais e fiscais, justificação do ranking                |
+| 5   | Dashboard               | Nível de validação atual, dias em curso, próxima tarefa, rendimento vs. objetivo |
+| 6   | Plano                   | Três fases ancoradas na escada, progresso                                        |
+| 7   | Detalhe da tarefa       | Instruções, critério de conclusão, marcar como feita                             |
+| 8   | Registo de validação    | Lançar evento N1–N4 com evidência; valor quando aplicável                        |
+| 9   | Revisão semanal         | Diagnóstico da IA e decisão continuar/ajustar/pivotar                            |
+| 10  | Perfil e definições     | Dados, exportar, eliminar conta (RGPD)                                           |
 
 ---
 
@@ -259,15 +260,15 @@ depuração do modelo em produção.
 
 ## 6. Fronteiras do v1
 
-| Fora do âmbito | Motivo |
-|---|---|
-| Pagamentos e subscrições | Decisão tomada: validar o núcleo primeiro |
-| Marketplace ou ligação a clientes reais | Muda o produto de ferramenta para intermediário — outro negócio, outro risco legal |
-| Verificação automática de evidência | Evidência é declarada com prova anexada, não verificada por integração |
-| Comunidade / social | Não encurta o TTV |
-| App nativa | PWA cobre o v1 |
-| Integração bancária | Risco regulatório desproporcionado |
-| Aconselhamento fiscal automatizado | Responsabilidade legal — o produto informa que existem obrigações, nunca as calcula |
+| Fora do âmbito                          | Motivo                                                                              |
+| --------------------------------------- | ----------------------------------------------------------------------------------- |
+| Pagamentos e subscrições                | Decisão tomada: validar o núcleo primeiro                                           |
+| Marketplace ou ligação a clientes reais | Muda o produto de ferramenta para intermediário — outro negócio, outro risco legal  |
+| Verificação automática de evidência     | Evidência é declarada com prova anexada, não verificada por integração              |
+| Comunidade / social                     | Não encurta o TTV                                                                   |
+| App nativa                              | PWA cobre o v1                                                                      |
+| Integração bancária                     | Risco regulatório desproporcionado                                                  |
+| Aconselhamento fiscal automatizado      | Responsabilidade legal — o produto informa que existem obrigações, nunca as calcula |
 
 ---
 
@@ -288,20 +289,20 @@ depuração do modelo em produção.
 
 ## 8. Decisões tomadas
 
-| Decisão | Escolha | Data |
-|---|---|---|
-| Camada de dados e auth | **Supabase** (Postgres + Auth + RLS + Storage) | 2026-09-10 |
-| Monetização no v1 | **Sem pagamentos**; Stripe adiado para pós-validação | 2026-09-10 |
-| Ordem de trabalho | **Especificação funcional antes de implementação** | 2026-09-10 |
-| Métrica-norte | **TTV** — tempo até à primeira validação real; primeira venda (N3) como marco comercial principal | 2026-09-10 |
-| Amplitude do diagnóstico | **Nove dimensões**; P1 primária mas não limitativa | 2026-09-10 |
-| Origem das oportunidades | **Híbrido** — catálogo curado + personalização e ranking por IA | 2026-09-10 |
-| Mercado e idioma do v1 | **Portugal exclusivamente, pt-PT**; sem i18n nesta fase | 2026-09-10 |
-| Catálogo de lançamento | **30 entradas curadas**, com matriz de cobertura mínima definida | 2026-09-10 |
-| Limite da fase de Preparação | **14 dias**, como hipótese configurável e não como facto | 2026-09-10 |
-| Definições de N1 e N2 | **Fechadas por tipo de oportunidade (T1–T6)**, observáveis e testáveis — ver `definicoes-validacao.md` | 2026-09-10 |
-| Manutenção do catálogo | **Processo mínimo definido** (papéis, estados, cadência, checklist, fila) — ver `processo-curadoria.md` | 2026-09-10 |
-| Sequenciamento da curadoria | **Em paralelo com a engenharia**; 3 entradas na Fase 0, 30 no lançamento | 2026-09-10 |
+| Decisão                      | Escolha                                                                                                 | Data       |
+| ---------------------------- | ------------------------------------------------------------------------------------------------------- | ---------- |
+| Camada de dados e auth       | **Supabase** (Postgres + Auth + RLS + Storage)                                                          | 2026-09-10 |
+| Monetização no v1            | **Sem pagamentos**; Stripe adiado para pós-validação                                                    | 2026-09-10 |
+| Ordem de trabalho            | **Especificação funcional antes de implementação**                                                      | 2026-09-10 |
+| Métrica-norte                | **TTV** — tempo até à primeira validação real; primeira venda (N3) como marco comercial principal       | 2026-09-10 |
+| Amplitude do diagnóstico     | **Nove dimensões**; P1 primária mas não limitativa                                                      | 2026-09-10 |
+| Origem das oportunidades     | **Híbrido** — catálogo curado + personalização e ranking por IA                                         | 2026-09-10 |
+| Mercado e idioma do v1       | **Portugal exclusivamente, pt-PT**; sem i18n nesta fase                                                 | 2026-09-10 |
+| Catálogo de lançamento       | **30 entradas curadas**, com matriz de cobertura mínima definida                                        | 2026-09-10 |
+| Limite da fase de Preparação | **14 dias**, como hipótese configurável e não como facto                                                | 2026-09-10 |
+| Definições de N1 e N2        | **Fechadas por tipo de oportunidade (T1–T6)**, observáveis e testáveis — ver `definicoes-validacao.md`  | 2026-09-10 |
+| Manutenção do catálogo       | **Processo mínimo definido** (papéis, estados, cadência, checklist, fila) — ver `processo-curadoria.md` | 2026-09-10 |
+| Sequenciamento da curadoria  | **Em paralelo com a engenharia**; 3 entradas na Fase 0, 30 no lançamento                                | 2026-09-10 |
 
 Restante stack proposta (a confirmar na Fase 0): Next.js 15 App Router · TypeScript strict ·
 Tailwind + shadcn/ui · Drizzle ORM com migrações versionadas · Zod em todos os limites ·
@@ -343,6 +344,7 @@ de N1 e N2 por tipo de oportunidade (documento próprio); processo mínimo de cu
 próprio); curadoria em paralelo com a engenharia. Fase 0 autorizada.
 
 **Revisão 2 — 2026-09-10.** Três correções de produto:
+
 1. Métrica-norte passa de "tempo até ao primeiro euro" para **TTV — tempo até à primeira validação
    real**, com escada de validação N0–N4 e a primeira venda (N3) como marco comercial principal.
 2. Diagnóstico alargado de 6 para **9 dimensões** com estrutura adaptativa; P1 continua primária mas

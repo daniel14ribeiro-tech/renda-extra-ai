@@ -8,11 +8,11 @@
 
 ## 1. Papéis
 
-| Papel | Responsabilidade | v1 |
-|---|---|---|
-| **Curador** | Escreve e actualiza entradas; recolhe e data fontes; mantém o playbook base | **[A NOMEAR]** — uma pessoa |
-| **Revisor** | Verifica a checklist de publicação antes de publicar | Pode ser a mesma pessoa, mas a checklist é obrigatória e fica registada |
-| **Triador** | Processa a fila de candidatas na cadência definida | Mesma pessoa no v1 |
+| Papel       | Responsabilidade                                                            | v1                                                                      |
+| ----------- | --------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| **Curador** | Escreve e actualiza entradas; recolhe e data fontes; mantém o playbook base | **[A NOMEAR]** — uma pessoa                                             |
+| **Revisor** | Verifica a checklist de publicação antes de publicar                        | Pode ser a mesma pessoa, mas a checklist é obrigatória e fica registada |
+| **Triador** | Processa a fila de candidatas na cadência definida                          | Mesma pessoa no v1                                                      |
 
 **Regra:** nenhuma entrada é publicada sem checklist preenchida e curador atribuído. Com uma só
 pessoa, a checklist substitui a segunda opinião — não é dispensada por isso.
@@ -29,13 +29,13 @@ rascunho → em_revisao → publicado ⇄ em_atualizacao → arquivado
                     (candidata promovida)
 ```
 
-| Estado | Significado | Visível ao utilizador |
-|---|---|---|
-| `rascunho` | Em escrita, incompleta | Não |
-| `em_revisao` | Completa, à espera da checklist | Não |
-| `publicado` | Verificada e dentro do prazo de revisão | Sim |
+| Estado           | Significado                                              | Visível ao utilizador                                                   |
+| ---------------- | -------------------------------------------------------- | ----------------------------------------------------------------------- |
+| `rascunho`       | Em escrita, incompleta                                   | Não                                                                     |
+| `em_revisao`     | Completa, à espera da checklist                          | Não                                                                     |
+| `publicado`      | Verificada e dentro do prazo de revisão                  | Sim                                                                     |
 | `em_atualizacao` | Prazo de revisão ultrapassado ou informação sob suspeita | Sim, marcada como **informação por confirmar**, despromovida no ranking |
-| `arquivado` | Deixou de ser viável ou não foi revista a tempo | Não. Planos ativos existentes mantêm-se, com aviso |
+| `arquivado`      | Deixou de ser viável ou não foi revista a tempo          | Não. Planos ativos existentes mantêm-se, com aviso                      |
 
 **Regra de degradação automática:** entrada com `data_proxima_revisao` ultrapassada passa a
 `em_atualizacao` sem intervenção. Passados mais 90 dias sem revisão, passa a `arquivado`. O
@@ -45,18 +45,18 @@ catálogo não permanece silenciosamente desactualizado.
 
 ## 3. Campos de manutenção obrigatórios
 
-| Campo | Descrição |
-|---|---|
-| `curador` | Quem é responsável por esta entrada |
-| `estado` | Conforme §2 |
-| `versao` | Incrementada em cada alteração material |
-| `data_ultima_revisao` | Data da última verificação completa |
-| `data_proxima_revisao` | Calculada a partir da classe de volatilidade (§4) |
-| `classe_volatilidade` | `alta` / `media` / `baixa` |
-| `tipo_oportunidade` | T1–T6 — determina as regras de validação aplicáveis |
-| `fontes[]` | Cada fonte com URL ou referência, **e data de consulta** |
-| `verificacoes` | Checklist de publicação preenchida (§5) |
-| `motivo_arquivo` | Obrigatório ao arquivar |
+| Campo                  | Descrição                                                |
+| ---------------------- | -------------------------------------------------------- |
+| `curador`              | Quem é responsável por esta entrada                      |
+| `estado`               | Conforme §2                                              |
+| `versao`               | Incrementada em cada alteração material                  |
+| `data_ultima_revisao`  | Data da última verificação completa                      |
+| `data_proxima_revisao` | Calculada a partir da classe de volatilidade (§4)        |
+| `classe_volatilidade`  | `alta` / `media` / `baixa`                               |
+| `tipo_oportunidade`    | T1–T6 — determina as regras de validação aplicáveis      |
+| `fontes[]`             | Cada fonte com URL ou referência, **e data de consulta** |
+| `verificacoes`         | Checklist de publicação preenchida (§5)                  |
+| `motivo_arquivo`       | Obrigatório ao arquivar                                  |
 
 Uma faixa de rendimento sem fonte datada é uma opinião. Não passa a checklist.
 
@@ -64,11 +64,11 @@ Uma faixa de rendimento sem fonte datada é uma opinião. Não passa a checklist
 
 ## 4. Cadência de revisão
 
-| Classe | Aplica-se a | Revisão |
-|---|---|---|
-| **Alta** | Dependente de regras, comissões ou algoritmos de plataformas; mercados de saturação rápida | **90 dias** |
-| **Média** | Serviços remotos, produtos digitais, procura estável mas concorrência móvel | **180 dias** |
-| **Baixa** | Serviços locais tradicionais, competências estáveis | **365 dias** |
+| Classe    | Aplica-se a                                                                                | Revisão      |
+| --------- | ------------------------------------------------------------------------------------------ | ------------ |
+| **Alta**  | Dependente de regras, comissões ou algoritmos de plataformas; mercados de saturação rápida | **90 dias**  |
+| **Média** | Serviços remotos, produtos digitais, procura estável mas concorrência móvel                | **180 dias** |
+| **Baixa** | Serviços locais tradicionais, competências estáveis                                        | **365 dias** |
 
 **Revisão fora de cadência (obrigatória):** alteração conhecida de regras ou fiscalidade; três ou
 mais pivots de utilizadores a partir da mesma entrada; discrepância entre rendimento estimado e
@@ -119,14 +119,14 @@ crescer a partir de procura real, não de intuição.
 
 **30 entradas publicadas** no lançamento. Quantidade sem cobertura não serve: a matriz mínima é
 
-| Eixo | Mínimo |
-|---|---|
-| Por tipo (T1–T6) | ≥ 3 entradas em cada tipo |
-| Capital inicial 0 € | ≥ 10 entradas |
-| Viáveis com ≤ 10h/semana (persona primária) | ≥ 12 entradas |
-| Viáveis com > 20h/semana | ≥ 6 entradas |
-| Sem experiência comercial prévia | ≥ 10 entradas |
-| Sem experiência prévia com IA | ≥ 15 entradas |
+| Eixo                                        | Mínimo                    |
+| ------------------------------------------- | ------------------------- |
+| Por tipo (T1–T6)                            | ≥ 3 entradas em cada tipo |
+| Capital inicial 0 €                         | ≥ 10 entradas             |
+| Viáveis com ≤ 10h/semana (persona primária) | ≥ 12 entradas             |
+| Viáveis com > 20h/semana                    | ≥ 6 entradas              |
+| Sem experiência comercial prévia            | ≥ 10 entradas             |
+| Sem experiência prévia com IA               | ≥ 15 entradas             |
 
 A cobertura é verificável por consulta ao catálogo e deve ser acompanhada durante a curadoria, não
 apurada no fim.
@@ -137,12 +137,12 @@ apurada no fim.
 
 A curadoria **não bloqueia** o arranque da engenharia. Sequência acordada:
 
-| Momento | Meta de catálogo | Serve para |
-|---|---|---|
-| Durante a Fase 0 (fundação) | **3 entradas** completas | Validar que o modelo de dados do catálogo aguenta casos reais |
-| Fim da Fase 1 (dados e auth) | **8 entradas** | Desenvolver a correspondência com dados verdadeiros, não fixtures inventadas |
-| Início da Fase 3 (núcleo funcional) | **15 entradas** | Testar ranking e cobertura com variedade suficiente |
-| Lançamento | **30 entradas** | Cumprir a matriz de cobertura de §7 |
+| Momento                             | Meta de catálogo         | Serve para                                                                   |
+| ----------------------------------- | ------------------------ | ---------------------------------------------------------------------------- |
+| Durante a Fase 0 (fundação)         | **3 entradas** completas | Validar que o modelo de dados do catálogo aguenta casos reais                |
+| Fim da Fase 1 (dados e auth)        | **8 entradas**           | Desenvolver a correspondência com dados verdadeiros, não fixtures inventadas |
+| Início da Fase 3 (núcleo funcional) | **15 entradas**          | Testar ranking e cobertura com variedade suficiente                          |
+| Lançamento                          | **30 entradas**          | Cumprir a matriz de cobertura de §7                                          |
 
 As três primeiras entradas devem ser deliberadamente diferentes entre si (tipos, capital e tempo
 distintos) — servem para partir o modelo de dados cedo, enquanto isso ainda é barato.
