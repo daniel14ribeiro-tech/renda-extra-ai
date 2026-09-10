@@ -1,7 +1,9 @@
 # Renda Extra AI — Especificação Funcional v1
 
-> **Estado deste documento:** PROPOSTA para validação — revisão 2.
-> Base técnica aprovada. Três decisões de produto corrigidas nesta revisão (ver §11).
+> **Estado deste documento:** APROVADO como base do produto — revisão 3.
+> Revisão 2 aprovada; nesta revisão foram fechadas seis decisões pendentes (ver §11).
+> Documentos complementares, ambos vinculativos:
+> [`definicoes-validacao.md`](./definicoes-validacao.md) e [`processo-curadoria.md`](./processo-curadoria.md).
 > Tudo o que não seja verificável a partir do código está marcado como **[PRESSUPOSTO]** e precisa
 > de confirmação antes de entrar em implementação.
 
@@ -178,7 +180,10 @@ Cada tarefa tem acção verificável, critério de conclusão explícito, esfor�
 
 **Regra de produto:** a Fase 1 tem **duração máxima**. Ultrapassado o limite, o produto força a
 passagem a Exposição com o que existir. Preparação infinita é a principal forma de fracasso silencioso.
-**[PRESSUPOSTO: 14 dias, ajustável por oportunidade]**
+
+O limite é **14 dias** — assumido como **hipótese de produto configurável, não como facto validado**.
+É parametrizável por oportunidade e alterável globalmente sem alteração de código, para poder ser
+corrigido com os dados de TTV reais assim que existirem.
 
 Detalhe progressivo: os primeiros 7 dias ao nível da tarefa; fases seguintes em esboço, detalhadas ao
 fechar a anterior.
@@ -291,6 +296,12 @@ depuração do modelo em produção.
 | Métrica-norte | **TTV** — tempo até à primeira validação real; primeira venda (N3) como marco comercial principal | 2026-09-10 |
 | Amplitude do diagnóstico | **Nove dimensões**; P1 primária mas não limitativa | 2026-09-10 |
 | Origem das oportunidades | **Híbrido** — catálogo curado + personalização e ranking por IA | 2026-09-10 |
+| Mercado e idioma do v1 | **Portugal exclusivamente, pt-PT**; sem i18n nesta fase | 2026-09-10 |
+| Catálogo de lançamento | **30 entradas curadas**, com matriz de cobertura mínima definida | 2026-09-10 |
+| Limite da fase de Preparação | **14 dias**, como hipótese configurável e não como facto | 2026-09-10 |
+| Definições de N1 e N2 | **Fechadas por tipo de oportunidade (T1–T6)**, observáveis e testáveis — ver `definicoes-validacao.md` | 2026-09-10 |
+| Manutenção do catálogo | **Processo mínimo definido** (papéis, estados, cadência, checklist, fila) — ver `processo-curadoria.md` | 2026-09-10 |
+| Sequenciamento da curadoria | **Em paralelo com a engenharia**; 3 entradas na Fase 0, 30 no lançamento | 2026-09-10 |
 
 Restante stack proposta (a confirmar na Fase 0): Next.js 15 App Router · TypeScript strict ·
 Tailwind + shadcn/ui · Drizzle ORM com migrações versionadas · Zod em todos os limites ·
@@ -300,44 +311,36 @@ Anthropic API server-side · Vercel · Sentry.
 
 ## 9. Decisões em aberto
 
-**Bloqueantes da Fase 3 (núcleo funcional):**
+**Bloqueiam a Fase 3 (núcleo funcional):**
 
-1. **Dimensão e profundidade do catálogo no lançamento** — quantas entradas curadas, e com que
-   cobertura do espectro de perfis? **[PRESSUPOSTO: 25–40 entradas]**. Abaixo disso, a maioria dos
-   utilizadores cai no caminho de candidatos não curados e o modelo híbrido não se cumpre na prática.
-2. **Quem cura, e com que cadência de revisão** — o catálogo degrada-se sozinho: plataformas mudam
-   regras, mercados saturam, valores desactualizam. Sem processo de revisão definido, o diferencial
-   do produto evapora-se em meses.
-3. **Limiar de adequação para acionar candidatos** — demasiado alto enche o produto de conteúdo não
-   curado; demasiado baixo mostra correspondências fracas como se fossem boas.
-4. **Definição operacional exata de N1 e N2** por tipo de oportunidade — "exposição real" significa
-   coisas diferentes num serviço local e num produto digital. A métrica-norte não é implementável
-   sem isto fechado.
-
-**Bloqueantes da Fase 0 (fundação):**
-
-5. **Mercado e idioma** — Portugal e português europeu apenas, ou multi-mercado? Afeta o catálogo,
-   as referências legais e fiscais, e se o i18n entra na fundação ou não. i18n é caro a acrescentar depois.
+1. **Limiar de adequação que aciona candidatos não curados** — demasiado alto enche o produto de
+   conteúdo não verificado; demasiado baixo apresenta correspondências fracas como se fossem boas.
+   Só é calibrável com o catálogo real: fica para o fim da curadoria inicial.
+2. **Quem ocupa o papel de curador** — o processo está definido em `processo-curadoria.md`, a pessoa
+   está por nomear. Sem responsável atribuído, o catálogo degrada-se independentemente do processo.
 
 **Não bloqueantes:**
 
-6. **Profundidade do acompanhamento** — email chega ao v1, ou é preciso push/PWA?
-7. **Modelo de acesso** — aberto, lista de espera, ou convite?
-8. **Limite temporal da fase de Preparação** — 14 dias é pressuposto meu, não dado observado.
+3. **Profundidade do acompanhamento** — email chega ao v1, ou é preciso push/PWA?
+4. **Modelo de acesso** — aberto, lista de espera, ou convite?
+5. **Limiar de "exposição de baixo alcance" em N1** — depende de dados que ainda não existem.
 
----
+**Nenhuma decisão em aberto bloqueia a Fase 0.**
 
-## 10. Próximo passo
+## 10. Estado de execução
 
-Validação desta revisão. Após aprovação, arranca a **Fase 0 — Fundação**: scaffold, qualidade, CI,
-sem qualquer funcionalidade de negócio.
+**Fase 0 — Fundação: em curso.** Scaffold, qualidade, CI e estrutura arquitectural, sem qualquer
+funcionalidade de negócio.
 
-O catálogo curado passa a ser **dependência de conteúdo no caminho crítico**, paralela à engenharia:
-sem entradas curadas suficientes não há Fase 3, independentemente do código estar pronto.
-
----
+A curadoria do catálogo decorre **em paralelo**, não em série: a engenharia não espera pelas 30
+entradas, e a curadoria não espera pelo código. As metas por fase estão em `processo-curadoria.md` §8.
 
 ## 11. Histórico de revisões
+
+**Revisão 3 — 2026-09-10.** Seis decisões fechadas: mercado pt-PT sem i18n; catálogo de lançamento
+de 30 entradas; limite de Preparação de 14 dias como hipótese configurável; definições operacionais
+de N1 e N2 por tipo de oportunidade (documento próprio); processo mínimo de curadoria (documento
+próprio); curadoria em paralelo com a engenharia. Fase 0 autorizada.
 
 **Revisão 2 — 2026-09-10.** Três correções de produto:
 1. Métrica-norte passa de "tempo até ao primeiro euro" para **TTV — tempo até à primeira validação
