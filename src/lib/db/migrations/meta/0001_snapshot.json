@@ -1,0 +1,584 @@
+{
+  "id": "2eee7fd7-6903-4c47-ba37-c7ec1a6767b2",
+  "prevId": "8ad63456-270c-429f-9d8b-b195f1903702",
+  "version": "7",
+  "dialect": "postgresql",
+  "tables": {
+    "public.papeis_utilizador": {
+      "name": "papeis_utilizador",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "utilizador_id": {
+          "name": "utilizador_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "papel": {
+          "name": "papel",
+          "type": "papel_utilizador",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "atribuido_em": {
+          "name": "atribuido_em",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "papeis_utilizador_utilizador_id_users_id_fk": {
+          "name": "papeis_utilizador_utilizador_id_users_id_fk",
+          "tableFrom": "papeis_utilizador",
+          "columnsFrom": ["utilizador_id"],
+          "tableTo": "users",
+          "schemaTo": "auth",
+          "columnsTo": ["id"],
+          "onUpdate": "no action",
+          "onDelete": "cascade"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "papeis_utilizador_unico": {
+          "name": "papeis_utilizador_unico",
+          "columns": ["utilizador_id", "papel"],
+          "nullsNotDistinct": false
+        }
+      },
+      "policies": {
+        "papeis_ler_proprios": {
+          "name": "papeis_ler_proprios",
+          "as": "PERMISSIVE",
+          "for": "SELECT",
+          "to": ["authenticated"],
+          "using": "utilizador_id = (select auth.uid())"
+        }
+      },
+      "checkConstraints": {},
+      "isRLSEnabled": true
+    },
+    "public.perfis": {
+      "name": "perfis",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "nome_apresentacao": {
+          "name": "nome_apresentacao",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "criado_em": {
+          "name": "criado_em",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "atualizado_em": {
+          "name": "atualizado_em",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "perfis_id_users_id_fk": {
+          "name": "perfis_id_users_id_fk",
+          "tableFrom": "perfis",
+          "columnsFrom": ["id"],
+          "tableTo": "users",
+          "schemaTo": "auth",
+          "columnsTo": ["id"],
+          "onUpdate": "no action",
+          "onDelete": "cascade"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {
+        "perfis_ler_proprio": {
+          "name": "perfis_ler_proprio",
+          "as": "PERMISSIVE",
+          "for": "SELECT",
+          "to": ["authenticated"],
+          "using": "id = (select auth.uid())"
+        },
+        "perfis_inserir_proprio": {
+          "name": "perfis_inserir_proprio",
+          "as": "PERMISSIVE",
+          "for": "INSERT",
+          "to": ["authenticated"],
+          "withCheck": "id = (select auth.uid())"
+        },
+        "perfis_actualizar_proprio": {
+          "name": "perfis_actualizar_proprio",
+          "as": "PERMISSIVE",
+          "for": "UPDATE",
+          "to": ["authenticated"],
+          "using": "id = (select auth.uid())",
+          "withCheck": "id = (select auth.uid())"
+        }
+      },
+      "checkConstraints": {},
+      "isRLSEnabled": true
+    },
+    "public.entradas_catalogo": {
+      "name": "entradas_catalogo",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "referencia": {
+          "name": "referencia",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "titulo": {
+          "name": "titulo",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "tipo": {
+          "name": "tipo",
+          "type": "tipo_oportunidade",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "cliente_alvo": {
+          "name": "cliente_alvo",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "problema": {
+          "name": "problema",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "solucao": {
+          "name": "solucao",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "pre_requisitos": {
+          "name": "pre_requisitos",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "'[]'::jsonb"
+        },
+        "competencias": {
+          "name": "competencias",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "'[]'::jsonb"
+        },
+        "canais_teste": {
+          "name": "canais_teste",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "'[]'::jsonb"
+        },
+        "riscos": {
+          "name": "riscos",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "'[]'::jsonb"
+        },
+        "tempo_semanal_minimo_horas": {
+          "name": "tempo_semanal_minimo_horas",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "tempo_notas": {
+          "name": "tempo_notas",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "investimento_inicial_notas": {
+          "name": "investimento_inicial_notas",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "dificuldade": {
+          "name": "dificuldade",
+          "type": "nivel_dificuldade",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "validacao": {
+          "name": "validacao",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "requisitos_legais": {
+          "name": "requisitos_legais",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "'[]'::jsonb"
+        },
+        "faixa_rendimento_mensal": {
+          "name": "faixa_rendimento_mensal",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "pendencias_verificacao": {
+          "name": "pendencias_verificacao",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "'[]'::jsonb"
+        },
+        "fontes": {
+          "name": "fontes",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "'[]'::jsonb"
+        },
+        "estado": {
+          "name": "estado",
+          "type": "estado_curadoria",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "'rascunho'"
+        },
+        "classe_volatilidade": {
+          "name": "classe_volatilidade",
+          "type": "classe_volatilidade",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "curador": {
+          "name": "curador",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "versao": {
+          "name": "versao",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "default": 1
+        },
+        "data_ultima_revisao": {
+          "name": "data_ultima_revisao",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "data_proxima_revisao": {
+          "name": "data_proxima_revisao",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "motivo_arquivo": {
+          "name": "motivo_arquivo",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "criado_em": {
+          "name": "criado_em",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "atualizado_em": {
+          "name": "atualizado_em",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "entradas_catalogo_referencia_unique": {
+          "name": "entradas_catalogo_referencia_unique",
+          "columns": ["referencia"],
+          "nullsNotDistinct": false
+        }
+      },
+      "policies": {
+        "entradas_ler_publicadas": {
+          "name": "entradas_ler_publicadas",
+          "as": "PERMISSIVE",
+          "for": "SELECT",
+          "to": ["authenticated"],
+          "using": "\"entradas_catalogo\".estado in ('publicado', 'em_atualizacao') or exists (\n  select 1 from \"papeis_utilizador\" p\n  where p.utilizador_id = (select auth.uid()) and p.papel in ('curador', 'administrador')\n)"
+        },
+        "entradas_curador_escreve": {
+          "name": "entradas_curador_escreve",
+          "as": "PERMISSIVE",
+          "for": "ALL",
+          "to": ["authenticated"],
+          "using": "exists (\n  select 1 from \"papeis_utilizador\" p\n  where p.utilizador_id = (select auth.uid()) and p.papel in ('curador', 'administrador')\n)",
+          "withCheck": "exists (\n  select 1 from \"papeis_utilizador\" p\n  where p.utilizador_id = (select auth.uid()) and p.papel in ('curador', 'administrador')\n)"
+        }
+      },
+      "checkConstraints": {},
+      "isRLSEnabled": true
+    },
+    "public.fases_catalogo": {
+      "name": "fases_catalogo",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "entrada_id": {
+          "name": "entrada_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "ordem": {
+          "name": "ordem",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "fase": {
+          "name": "fase",
+          "type": "fase_playbook",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "objetivo": {
+          "name": "objetivo",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "nivel_alvo": {
+          "name": "nivel_alvo",
+          "type": "nivel_validacao",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "fases_catalogo_entrada_id_entradas_catalogo_id_fk": {
+          "name": "fases_catalogo_entrada_id_entradas_catalogo_id_fk",
+          "tableFrom": "fases_catalogo",
+          "columnsFrom": ["entrada_id"],
+          "tableTo": "entradas_catalogo",
+          "columnsTo": ["id"],
+          "onUpdate": "no action",
+          "onDelete": "cascade"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "fases_catalogo_ordem_unica": {
+          "name": "fases_catalogo_ordem_unica",
+          "columns": ["entrada_id", "ordem"],
+          "nullsNotDistinct": false
+        }
+      },
+      "policies": {
+        "fases_ler_publicadas": {
+          "name": "fases_ler_publicadas",
+          "as": "PERMISSIVE",
+          "for": "SELECT",
+          "to": ["authenticated"],
+          "using": "exists (\n        select 1 from \"entradas_catalogo\" e\n        where e.id = entrada_id and \"e\".estado in ('publicado', 'em_atualizacao')\n      ) or exists (\n  select 1 from \"papeis_utilizador\" p\n  where p.utilizador_id = (select auth.uid()) and p.papel in ('curador', 'administrador')\n)"
+        },
+        "fases_curador_escreve": {
+          "name": "fases_curador_escreve",
+          "as": "PERMISSIVE",
+          "for": "ALL",
+          "to": ["authenticated"],
+          "using": "exists (\n  select 1 from \"papeis_utilizador\" p\n  where p.utilizador_id = (select auth.uid()) and p.papel in ('curador', 'administrador')\n)",
+          "withCheck": "exists (\n  select 1 from \"papeis_utilizador\" p\n  where p.utilizador_id = (select auth.uid()) and p.papel in ('curador', 'administrador')\n)"
+        }
+      },
+      "checkConstraints": {},
+      "isRLSEnabled": true
+    },
+    "public.tarefas_catalogo": {
+      "name": "tarefas_catalogo",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "fase_id": {
+          "name": "fase_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "ordem": {
+          "name": "ordem",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "acao": {
+          "name": "acao",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "criterio_conclusao": {
+          "name": "criterio_conclusao",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "esforco_minutos": {
+          "name": "esforco_minutos",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "tarefas_catalogo_fase_id_fases_catalogo_id_fk": {
+          "name": "tarefas_catalogo_fase_id_fases_catalogo_id_fk",
+          "tableFrom": "tarefas_catalogo",
+          "columnsFrom": ["fase_id"],
+          "tableTo": "fases_catalogo",
+          "columnsTo": ["id"],
+          "onUpdate": "no action",
+          "onDelete": "cascade"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "tarefas_catalogo_ordem_unica": {
+          "name": "tarefas_catalogo_ordem_unica",
+          "columns": ["fase_id", "ordem"],
+          "nullsNotDistinct": false
+        }
+      },
+      "policies": {
+        "tarefas_ler_publicadas": {
+          "name": "tarefas_ler_publicadas",
+          "as": "PERMISSIVE",
+          "for": "SELECT",
+          "to": ["authenticated"],
+          "using": "exists (\n        select 1 from \"fases_catalogo\" f\n        join \"entradas_catalogo\" e on e.id = f.entrada_id\n        where f.id = fase_id and \"e\".estado in ('publicado', 'em_atualizacao')\n      ) or exists (\n  select 1 from \"papeis_utilizador\" p\n  where p.utilizador_id = (select auth.uid()) and p.papel in ('curador', 'administrador')\n)"
+        },
+        "tarefas_curador_escreve": {
+          "name": "tarefas_curador_escreve",
+          "as": "PERMISSIVE",
+          "for": "ALL",
+          "to": ["authenticated"],
+          "using": "exists (\n  select 1 from \"papeis_utilizador\" p\n  where p.utilizador_id = (select auth.uid()) and p.papel in ('curador', 'administrador')\n)",
+          "withCheck": "exists (\n  select 1 from \"papeis_utilizador\" p\n  where p.utilizador_id = (select auth.uid()) and p.papel in ('curador', 'administrador')\n)"
+        }
+      },
+      "checkConstraints": {},
+      "isRLSEnabled": true
+    }
+  },
+  "enums": {
+    "public.classe_volatilidade": {
+      "name": "classe_volatilidade",
+      "schema": "public",
+      "values": ["alta", "media", "baixa"]
+    },
+    "public.estado_curadoria": {
+      "name": "estado_curadoria",
+      "schema": "public",
+      "values": ["rascunho", "em_revisao", "publicado", "em_atualizacao", "arquivado"]
+    },
+    "public.fase_playbook": {
+      "name": "fase_playbook",
+      "schema": "public",
+      "values": ["preparacao", "exposicao", "conversao"]
+    },
+    "public.nivel_dificuldade": {
+      "name": "nivel_dificuldade",
+      "schema": "public",
+      "values": ["iniciante", "intermedio", "avancado"]
+    },
+    "public.nivel_validacao": {
+      "name": "nivel_validacao",
+      "schema": "public",
+      "values": ["n0", "n1", "n2", "n3", "n4"]
+    },
+    "public.papel_utilizador": {
+      "name": "papel_utilizador",
+      "schema": "public",
+      "values": ["utilizador", "curador", "administrador"]
+    },
+    "public.tipo_oportunidade": {
+      "name": "tipo_oportunidade",
+      "schema": "public",
+      "values": ["t1", "t2", "t3", "t4", "t5", "t6"]
+    }
+  },
+  "schemas": {},
+  "views": {},
+  "sequences": {},
+  "roles": {},
+  "policies": {},
+  "_meta": {
+    "columns": {},
+    "schemas": {},
+    "tables": {}
+  }
+}
