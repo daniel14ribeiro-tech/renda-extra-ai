@@ -12,8 +12,11 @@ venda como marco comercial principal.
 
 ## Estado
 
-> **Fase 0 — Fundação.** Não existem funcionalidades de negócio neste repositório.
-> O que está aqui é a fundação técnica: estrutura, qualidade, testes e integração contínua.
+> **Fase 1 — Dados e Identidade, concluída.** Há base de dados com RLS activa e forçada,
+> autenticação completa e as três primeiras entradas de catálogo, em rascunho.
+>
+> **Ainda não há produto:** não existe diagnóstico, correspondência com oportunidades, planos
+> nem registo de validação. Isso começa na Fase 2.
 
 ## Stack
 
@@ -25,7 +28,7 @@ venda como marco comercial principal.
 | IA        | API Anthropic, exclusivamente no servidor — **Fase 3**           |
 | Qualidade | ESLint, Prettier, husky, lint-staged, Vitest, GitHub Actions     |
 
-Nenhum SDK de base de dados, IA, pagamentos, email ou análise está instalado nesta fase —
+Pagamentos, email e análise continuam sem SDK instalado e sem serviço contratado —
 ver [ADR 0012](./docs/adr/0012-fase-0-sem-sdks-de-terceiros.md).
 
 ## Arranque

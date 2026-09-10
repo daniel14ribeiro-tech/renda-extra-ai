@@ -9,8 +9,9 @@ mensagens de commit. Identificadores de domínio em português; termos técnicos
 
 ## Estado
 
-**Fase 0 — Fundação, concluída.** Não existem funcionalidades de negócio. O que está no repositório
-é estrutura, qualidade, testes e integração contínua.
+**Fase 1 — Dados e Identidade, concluída.** Existe base de dados com RLS, autenticação completa e
+as três primeiras entradas de catálogo. **Não existem ainda funcionalidades de produto**: não há
+diagnóstico, correspondência, planos nem registo de validação.
 
 Antes de escrever código de produto, ler `docs/produto/especificacao-v1.md`. As decisões de
 arquitectura estão em `docs/adr/` e são vinculativas — para as contrariar, escreve-se um ADR novo.
@@ -23,6 +24,8 @@ pnpm build          # build de produção
 pnpm check          # lint + formatação + tipos + testes  ← antes de qualquer commit
 pnpm test           # testes
 pnpm lint:fix       # corrigir o que for automático
+pnpm db:gerar       # gerar migração a partir do esquema Drizzle
+pnpm db:migrar      # aplicar migrações (precisa de DATABASE_URL)
 ```
 
 Gestor de pacotes: **pnpm**. Node ≥ 22 (ver `.nvmrc`).
@@ -34,30 +37,35 @@ src/app/         rotas, layouts e route handlers — apresentação apenas
 src/components/  ui/ (primitivos shadcn) e compostos partilhados
 src/features/    um directório por domínio: casos de uso e regras de negócio
 src/lib/         adaptadores: db, supabase, ai, payments, email, analytics, env
+content/         catálogo curado, em ficheiros versionados
 docs/adr/        decisões de arquitectura
 docs/produto/    especificação, definições de validação, processo de curadoria
 ```
 
 **Dependências num só sentido:** `app/` e `components/` → `features/` → `lib/`.
-A apresentação não importa `@/lib/db` nem `@/lib/ai` — o ESLint recusa.
+A apresentação não importa `@/lib/db`, `@/lib/ai` nem `@/lib/supabase` — o ESLint recusa.
 
 ## Regras que não se negoceiam
 
 1. **Ambiente** — `process.env` só se lê em `src/lib/env/`. Novas variáveis entram no esquema Zod
    quando forem usadas, e no `.env.example` na secção da fase respectiva.
 2. **Segredos** — nunca em `NEXT_PUBLIC_*`, nunca em mensagens de erro, nunca versionados.
-3. **RLS** — toda a tabela de utilizador nasce com RLS activa e teste de isolamento. A verificação na
-   aplicação é a segunda linha de defesa, não a primeira.
-4. **Esquema de dados** — só muda por migração versionada. Nunca pelo painel do Supabase.
-5. **IA** — só no servidor, com `import 'server-only'`. Saída sempre validada com Zod. A IA não
+3. **RLS** — toda a tabela de utilizador nasce com RLS activa **e forçada**, com teste de
+   isolamento. A verificação na aplicação é a segunda linha de defesa, não a primeira. O middleware
+   não é defesa nenhuma: é navegação.
+4. **Acesso a dados** — todo o acesso a dados de utilizador passa por `executarComoUtilizador`.
+   Uma consulta escrita fora desse invólucro corre sem RLS, porque a ligação da aplicação é
+   privilegiada. Ver ADR 0014.
+5. **Esquema de dados** — só muda por migração versionada. Nunca pelo painel do Supabase.
+6. **IA** — só no servidor, com `import 'server-only'`. Saída sempre validada com Zod. A IA não
    escreve na base de dados nem no catálogo, e não tem privilégios que uma injecção possa aproveitar.
-6. **Catálogo** — a IA personaliza e ordena; **curar é acto humano**. Ver `docs/produto/processo-curadoria.md`.
-7. **Validação** — nenhum evento N1–N4 sem evidência. As regras estão em
+7. **Catálogo** — a IA personaliza e ordena; **curar é acto humano**. Ver `docs/produto/processo-curadoria.md`.
+8. **Validação** — nenhum evento N1–N4 sem evidência. As regras estão em
    `docs/produto/definicoes-validacao.md` e são determinísticas e testadas.
-8. **Tokens** — os componentes usam `bg-background`, `text-muted-foreground` e afins. Nunca cores
+9. **Tokens** — os componentes usam `bg-background`, `text-muted-foreground` e afins. Nunca cores
    literais.
-9. **Mobile-first** — desenhar a partir de 360px. Alvos de toque com pelo menos 44px.
-10. **Sem código de andaime** — o que existe no repositório corre e é testado. Estrutura por
+10. **Mobile-first** — desenhar a partir de 360px. Alvos de toque com pelo menos 44px.
+11. **Sem código de andaime** — o que existe no repositório corre e é testado. Estrutura por
     preencher documenta-se num README, não se simula com código que aparenta funcionar.
 
 ## Convenções
