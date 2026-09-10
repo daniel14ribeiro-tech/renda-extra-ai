@@ -59,9 +59,16 @@ const config = [
         {
           patterns: [
             {
-              group: ['@/lib/db', '@/lib/db/*', '@/lib/ai', '@/lib/ai/*'],
+              group: [
+                '@/lib/db',
+                '@/lib/db/*',
+                '@/lib/ai',
+                '@/lib/ai/*',
+                '@/lib/supabase',
+                '@/lib/supabase/*',
+              ],
               message:
-                'A camada de apresentação não fala com dados nem com IA. Passa por src/features/<dominio>.',
+                'A camada de apresentação não fala com dados, IA nem fornecedor. Passa por src/features/<dominio>.',
             },
           ],
         },

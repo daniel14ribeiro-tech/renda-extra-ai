@@ -35,6 +35,18 @@ export function criarRepositorioDeIdentidade<TQuery extends PgQueryResultHKT>(db
       });
     },
 
+    /**
+     * Cria o perfil se ainda não existir.
+     *
+     * O perfil nasce na primeira visita autenticada e não no registo: entre
+     * registar e confirmar o email pode não chegar a haver conta nenhuma.
+     */
+    async garantirPerfil(actor: string): Promise<void> {
+      await executarComoUtilizador(db, actor, async (tx) => {
+        await tx.insert(perfis).values({ id: actor }).onConflictDoNothing();
+      });
+    },
+
     /** Devolve quantas linhas foram efectivamente alteradas — zero é a prova de recusa. */
     async actualizarNome(actor: string, alvo: string, nome: string): Promise<number> {
       return executarComoUtilizador(db, actor, async (tx) => {

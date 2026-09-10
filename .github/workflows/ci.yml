@@ -16,6 +16,13 @@ concurrency:
 
 env:
   NEXT_TELEMETRY_DISABLED: '1'
+  # Valores de fachada: a validação de ambiente corre no arranque do build e tem
+  # de encontrar as variáveis. Nada aqui liga a lado nenhum — não há segredos em
+  # CI porque não há nada em CI que precise de um.
+  DATABASE_URL: 'postgresql://ci:ci@localhost:5432/ci'
+  NEXT_PUBLIC_APP_URL: 'http://localhost:3000'
+  NEXT_PUBLIC_SUPABASE_URL: 'https://ci.exemplo.supabase.co'
+  NEXT_PUBLIC_SUPABASE_ANON_KEY: 'chave-anonima-de-ci'
 
 jobs:
   verificar:
