@@ -1,0 +1,184 @@
+{
+  "referencia": "criacao-e-revisao-de-cv-e-perfil-profissional",
+  "titulo": "Criação e revisão de CV e perfil profissional",
+  "tipo": "t2",
+  "clienteAlvo": "Pessoas em processo de mudança de emprego cujo CV e perfil profissional online não reflectem o que fazem hoje: recém-licenciados, quem muda de área, e quem foi progredindo internamente sem nunca actualizar nada.",
+  "problema": "Quem se candidata sabe o que fez, mas não consegue escrevê-lo de forma que sobreviva a uma leitura de trinta segundos. O documento existe, está desactualizado, e a pessoa não tem distância crítica para o corrigir sozinha.",
+  "solucao": "Serviço pontual de reescrita: entrevista curta para extrair o que a pessoa fez de facto, reescrita do CV, alinhamento do perfil online com o CV, e uma versão adaptada a um tipo de vaga concreto.",
+  "preRequisitos": [
+    "Computador com processador de texto",
+    "Perfil profissional online próprio e apresentável"
+  ],
+  "competencias": [
+    "Escrita e síntese em português",
+    "Entrevistar e extrair informação de quem não sabe o que é relevante",
+    "Noções de formatação de documentos",
+    "Discrição no tratamento de dados pessoais"
+  ],
+  "canaisTeste": [
+    "Rede de contactos própria",
+    "Comunidades profissionais online",
+    "Plataformas de trabalho freelance",
+    "Publicação regular sobre o tema no perfil profissional próprio"
+  ],
+  "riscos": [
+    "Trabalho por peça: sem angariação constante, a receita pára",
+    "Lida com dados pessoais e histórico profissional de terceiros",
+    "O serviço melhora o documento e não promete a vaga — prometer resultado é insustentável",
+    "Se a oferta for apresentada como \"escrever um CV\", torna-se facilmente substituível: o valor está na entrevista e no critério"
+  ],
+  "tempoSemanalMinimoHoras": 5,
+  "tempoNotas": "Estimativa de planeamento, por confirmar: cerca de três horas por cliente entre entrevista, escrita e revisão, mais o tempo de angariação.",
+  "investimentoInicialNotas": "Estimativa por confirmar: pressupõe ferramentas gratuitas de escrita e um perfil online já existente, sem investimento monetário obrigatório.",
+  "dificuldade": "iniciante",
+  "validacao": {
+    "n1": {
+      "descricao": "Proposta enviada a pelo menos 3 pessoas em processo de candidatura, ou oferta publicada num canal profissional.",
+      "evidenciaExigida": ["mensagem_enviada", "url_publica"]
+    },
+    "n2": {
+      "descricao": "Alguém responde a pedir detalhes, preço, prazo ou disponibilidade.",
+      "evidenciaExigida": ["mensagem_recebida", "convite de reunião com data"]
+    },
+    "n3": {
+      "descricao": "Primeiro pagamento recebido por trabalho concluído e aceite, de alguém sem relação pessoal próxima.",
+      "evidenciaExigida": ["comprovativo_pagamento", "recibo_emitido"]
+    },
+    "n4": {
+      "descricao": "Segundo cliente distinto, ou segundo trabalho pago pelo mesmo cliente.",
+      "evidenciaExigida": ["comprovativo_pagamento", "recibo_emitido"]
+    }
+  },
+  "requisitosLegais": [
+    {
+      "tema": "Enquadramento para prestar serviços e emitir recibo em Portugal",
+      "estado": "pendente_verificacao"
+    },
+    {
+      "tema": "Obrigações de IVA e limites aplicáveis",
+      "estado": "pendente_verificacao"
+    },
+    {
+      "tema": "Tratamento de dados pessoais de clientes à luz do RGPD",
+      "estado": "pendente_verificacao"
+    },
+    {
+      "tema": "Compatibilidade com contrato de trabalho existente",
+      "estado": "pendente_verificacao"
+    }
+  ],
+  "faixaRendimentoMensal": null,
+  "pendenciasVerificacao": [
+    {
+      "campo": "faixa_rendimento_mensal",
+      "motivo": "Não existe fonte verificada. Não se estima rendimento: fica nulo até haver dado apurado com data."
+    },
+    {
+      "campo": "tempo_semanal_minimo_horas",
+      "motivo": "Estimativa de planeamento, não medida em execução real."
+    },
+    {
+      "campo": "investimento_inicial_notas",
+      "motivo": "Pressupõe ferramentas gratuitas; por confirmar."
+    },
+    {
+      "campo": "requisitos_legais",
+      "motivo": "Os temas estão identificados; a verificação junto de fonte oficial está por fazer."
+    },
+    {
+      "campo": "canais_teste",
+      "motivo": "Os canais são hipóteses a testar, não canais com eficácia comprovada."
+    },
+    {
+      "campo": "curador",
+      "motivo": "O papel de curador está definido no processo mas ainda não foi atribuído a ninguém."
+    }
+  ],
+  "fontes": [],
+  "estado": "rascunho",
+  "classeVolatilidade": "media",
+  "curador": "por-atribuir",
+  "versao": 1,
+  "dataUltimaRevisao": "2026-09-10",
+  "dataProximaRevisao": "2027-03-09",
+  "fases": [
+    {
+      "ordem": 1,
+      "fase": "preparacao",
+      "nivelAlvo": "n0",
+      "objetivo": "Ter um exemplo do teu trabalho e uma oferta com preço antes de abordar alguém.",
+      "tarefas": [
+        {
+          "ordem": 1,
+          "acao": "Reescrever o teu próprio CV e alinhar o teu perfil online com ele.",
+          "criterioConclusao": "O teu CV e o teu perfil contam a mesma história e servem de amostra.",
+          "esforcoMinutos": 150
+        },
+        {
+          "ordem": 2,
+          "acao": "Definir o que o serviço inclui, em quanto tempo entregas e por que preço.",
+          "criterioConclusao": "Oferta escrita numa página, com prazo e preço definidos.",
+          "esforcoMinutos": 60
+        },
+        {
+          "ordem": 3,
+          "acao": "Preparar o guião da entrevista inicial com o cliente.",
+          "criterioConclusao": "Lista de perguntas que extrai resultados concretos e não funções genéricas.",
+          "esforcoMinutos": 60
+        }
+      ]
+    },
+    {
+      "ordem": 2,
+      "fase": "exposicao",
+      "nivelAlvo": "n1",
+      "objetivo": "Pôr a oferta à frente de pessoas que estão mesmo a candidatar-se.",
+      "tarefas": [
+        {
+          "ordem": 1,
+          "acao": "Identificar 10 pessoas na tua rede em mudança de emprego ou à procura.",
+          "criterioConclusao": "Lista com nome, contexto e canal de contacto.",
+          "esforcoMinutos": 45
+        },
+        {
+          "ordem": 2,
+          "acao": "Enviar proposta individual a pelo menos 3 dessas pessoas, sem mensagem em massa.",
+          "criterioConclusao": "Três mensagens enviadas, guardadas com data.",
+          "esforcoMinutos": 90
+        },
+        {
+          "ordem": 3,
+          "acao": "Publicar no teu perfil profissional o que fazes e para quem.",
+          "criterioConclusao": "Publicação online com oferta explícita e forma de contacto.",
+          "esforcoMinutos": 45
+        }
+      ]
+    },
+    {
+      "ordem": 3,
+      "fase": "conversao",
+      "nivelAlvo": "n3",
+      "objetivo": "Converter as respostas em trabalho pago.",
+      "tarefas": [
+        {
+          "ordem": 1,
+          "acao": "Fazer a entrevista inicial com quem respondeu e enviar proposta com prazo e preço.",
+          "criterioConclusao": "Proposta enviada em menos de 48 horas após a entrevista.",
+          "esforcoMinutos": 90
+        },
+        {
+          "ordem": 2,
+          "acao": "Combinar por escrito o que é entregue, quando, e como é pago.",
+          "criterioConclusao": "Acordo escrito aceite antes de começares a trabalhar.",
+          "esforcoMinutos": 30
+        },
+        {
+          "ordem": 3,
+          "acao": "Entregar o trabalho, fazer uma ronda de revisão e emitir o recibo.",
+          "criterioConclusao": "Trabalho aceite, pagamento recebido e registado como N3.",
+          "esforcoMinutos": 180
+        }
+      ]
+    }
+  ]
+}

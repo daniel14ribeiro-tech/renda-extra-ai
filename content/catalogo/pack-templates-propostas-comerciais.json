@@ -1,0 +1,195 @@
+{
+  "referencia": "pack-templates-propostas-comerciais",
+  "titulo": "Pack de templates de propostas comerciais para profissionais independentes",
+  "tipo": "t3",
+  "clienteAlvo": "Profissionais independentes que enviam propostas escritas a clientes — designers, formadores, consultores, técnicos — e que reescrevem cada proposta a partir do zero.",
+  "problema": "Cada proposta é escrita de raiz, demora mais do que devia e sai inconsistente. Não há um modelo próprio a que recorrer nem uma estrutura definida sobre o que uma proposta deve conter e por que ordem.",
+  "solucao": "Pack de modelos editáveis de proposta comercial, com estrutura, secções, texto de apoio e instruções de adaptação a diferentes tipos de serviço, vendido como produto digital descarregável.",
+  "preRequisitos": [
+    "Ferramenta de edição de documentos",
+    "Meio de pagamento online activo",
+    "Experiência própria em enviar propostas a clientes"
+  ],
+  "competencias": [
+    "Escrita comercial",
+    "Estruturação de documentos",
+    "Design básico de documentos",
+    "Configuração de uma página de venda"
+  ],
+  "canaisTeste": [
+    "Plataformas de venda de produtos digitais",
+    "Perfil profissional próprio",
+    "Comunidades de profissionais independentes",
+    "Lista de contactos própria"
+  ],
+  "riscos": [
+    "Todo o esforço é adiantado: produz-se sem saber se alguém compra",
+    "Sem audiência prévia, o passo difícil é a exposição e não a produção",
+    "Depende das regras e das comissões de uma plataforma de terceiros",
+    "Produto digital é copiável e redistribuível sem controlo depois de vendido"
+  ],
+  "tempoSemanalMinimoHoras": 6,
+  "tempoNotas": "Estimativa de planeamento, por confirmar: o esforço concentra-se na produção inicial e passa depois a ser sobretudo divulgação.",
+  "investimentoInicialNotas": "Estimativa por confirmar: pode exigir subscrição de uma plataforma de venda ou comissão sobre cada venda. Valores e condições a verificar antes de escolher a plataforma.",
+  "dificuldade": "intermedio",
+  "validacao": {
+    "n1": {
+      "descricao": "Produto listado e comprável, com preço definido e meio de pagamento activo.",
+      "evidenciaExigida": ["url_publica"]
+    },
+    "n2": {
+      "descricao": "Pedido de informação antes da compra, ou carrinho abandonado identificável no painel da plataforma.",
+      "evidenciaExigida": ["mensagem_recebida", "referencia_plataforma"]
+    },
+    "n3": {
+      "descricao": "Primeira compra paga por alguém sem relação pessoal próxima.",
+      "evidenciaExigida": ["comprovativo_pagamento", "referencia_plataforma"]
+    },
+    "n4": {
+      "descricao": "Segunda compra, do mesmo ou de outro comprador.",
+      "evidenciaExigida": ["comprovativo_pagamento", "referencia_plataforma"]
+    }
+  },
+  "requisitosLegais": [
+    {
+      "tema": "Facturação de venda de produto digital em Portugal",
+      "estado": "pendente_verificacao"
+    },
+    {
+      "tema": "IVA aplicável a vendas digitais, incluindo vendas a outros países",
+      "estado": "pendente_verificacao"
+    },
+    {
+      "tema": "Direitos de autor e licença de utilização dos modelos vendidos",
+      "estado": "pendente_verificacao"
+    },
+    {
+      "tema": "Direito de livre resolução na venda de conteúdo digital",
+      "estado": "pendente_verificacao"
+    },
+    {
+      "tema": "Compatibilidade com contrato de trabalho existente",
+      "estado": "pendente_verificacao"
+    }
+  ],
+  "faixaRendimentoMensal": null,
+  "pendenciasVerificacao": [
+    {
+      "campo": "faixa_rendimento_mensal",
+      "motivo": "Não existe fonte verificada. Não se estima rendimento: fica nulo até haver dado apurado com data."
+    },
+    {
+      "campo": "tempo_semanal_minimo_horas",
+      "motivo": "Estimativa de planeamento, não medida em execução real."
+    },
+    {
+      "campo": "investimento_inicial_notas",
+      "motivo": "Depende da plataforma escolhida, cujas condições estão por verificar."
+    },
+    {
+      "campo": "requisitos_legais",
+      "motivo": "Os temas estão identificados; a verificação junto de fonte oficial está por fazer."
+    },
+    {
+      "campo": "canais_teste",
+      "motivo": "Os canais são hipóteses a testar, não canais com eficácia comprovada."
+    },
+    {
+      "campo": "curador",
+      "motivo": "O papel de curador está definido no processo mas ainda não foi atribuído a ninguém."
+    }
+  ],
+  "fontes": [],
+  "estado": "rascunho",
+  "classeVolatilidade": "media",
+  "curador": "por-atribuir",
+  "versao": 1,
+  "dataUltimaRevisao": "2026-09-10",
+  "dataProximaRevisao": "2027-03-09",
+  "fases": [
+    {
+      "ordem": 1,
+      "fase": "preparacao",
+      "nivelAlvo": "n0",
+      "objetivo": "Ter um produto mínimo comprável, sem o levar à perfeição antes de existir comprador.",
+      "tarefas": [
+        {
+          "ordem": 1,
+          "acao": "Reunir as propostas que já enviaste e extrair a estrutura comum.",
+          "criterioConclusao": "Estrutura escrita, com as secções que qualquer proposta precisa de ter.",
+          "esforcoMinutos": 120
+        },
+        {
+          "ordem": 2,
+          "acao": "Produzir três modelos editáveis a partir dessa estrutura.",
+          "criterioConclusao": "Três ficheiros editáveis, revistos, prontos a descarregar.",
+          "esforcoMinutos": 360
+        },
+        {
+          "ordem": 3,
+          "acao": "Escolher a plataforma de venda e verificar comissões, condições e obrigações fiscais.",
+          "criterioConclusao": "Plataforma escolhida, com condições confirmadas por escrito.",
+          "esforcoMinutos": 90
+        },
+        {
+          "ordem": 4,
+          "acao": "Publicar a página de venda com preço e pagamento activo.",
+          "criterioConclusao": "É possível comprar o produto do início ao fim, testado por ti.",
+          "esforcoMinutos": 120
+        }
+      ]
+    },
+    {
+      "ordem": 2,
+      "fase": "exposicao",
+      "nivelAlvo": "n1",
+      "objetivo": "Levar o produto a pessoas que enviam propostas — publicar não é o mesmo que expor.",
+      "tarefas": [
+        {
+          "ordem": 1,
+          "acao": "Registar o evento N1 com a ligação pública da página de venda.",
+          "criterioConclusao": "Evento N1 registado com url pública.",
+          "esforcoMinutos": 10
+        },
+        {
+          "ordem": 2,
+          "acao": "Apresentar o produto em pelo menos três comunidades ou canais onde estejam profissionais independentes.",
+          "criterioConclusao": "Três publicações ou mensagens feitas, guardadas com data.",
+          "esforcoMinutos": 120
+        },
+        {
+          "ordem": 3,
+          "acao": "Falar directamente com dez profissionais da tua rede que enviem propostas.",
+          "criterioConclusao": "Dez conversas iniciadas, com resposta ou ausência dela registada.",
+          "esforcoMinutos": 150
+        }
+      ]
+    },
+    {
+      "ordem": 3,
+      "fase": "conversao",
+      "nivelAlvo": "n3",
+      "objetivo": "Transformar interesse em primeira compra e perceber o que trava as restantes.",
+      "tarefas": [
+        {
+          "ordem": 1,
+          "acao": "Responder a cada pedido de informação no próprio dia.",
+          "criterioConclusao": "Nenhum pedido fica sem resposta em 24 horas.",
+          "esforcoMinutos": 30
+        },
+        {
+          "ordem": 2,
+          "acao": "Perguntar a quem não comprou o que faltava.",
+          "criterioConclusao": "Pelo menos três respostas recolhidas e registadas.",
+          "esforcoMinutos": 60
+        },
+        {
+          "ordem": 3,
+          "acao": "Registar a primeira venda com o comprovativo da plataforma.",
+          "criterioConclusao": "Evento N3 registado com evidência.",
+          "esforcoMinutos": 15
+        }
+      ]
+    }
+  ]
+}
